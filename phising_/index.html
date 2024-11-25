@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <style>
+        /* CSS to style the body */
+        body {``
+            font-family: Arial, sans-serif;
+            background-color:black;
+            color: white;
+        
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling the form container */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Styling the label and input fields */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }        
+
+        /* Styling the submit button */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <p style="text-align: center; font-size: 50px; padding-top: 5%;">Phising website Detection Uisng Machine Learning</p>
+    <form id="inputForm" style="margin-left: 30%;">
+        <h2>Enter URL</h2>
+        <!-- <label for="inputData">Data:</label> -->
+        <input type="text" id="inputData" name="inputData" required style="margin-right: 10px;">
+        <button type="button" onclick="sendData()">Submit</button>
+    </form>
+
+    <script>
+        function sendData() {
+            const input = document.getElementById('inputData').value;
+
+            // Sending data to Colab using Google Colab's JavaScript API
+            google.colab.kernel.invokeFunction('notebook_process_data', [input], {});
+            alert('Data has been sent: ' + input);
+        }
+    </script>
+</body>
+</html>
